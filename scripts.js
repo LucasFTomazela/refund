@@ -2,5 +2,6 @@
 const amount = document.getElementById("amount")
 
 amount.oninput = () => {
-  console.log("Novo conteúdo")
+  let value = amount.value.replace(/\D/g, "")
+  amount.value = value
 }
