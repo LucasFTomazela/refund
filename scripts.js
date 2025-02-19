@@ -137,8 +137,6 @@ function updateTotals(){
 
       // Incrementar um valor total
       total += Number(value)
-
-      console.log(value)
     }
 
     // Cria a span para adicionar o R$ formatado.
@@ -163,6 +161,13 @@ function updateTotals(){
 expenseList.addEventListener("click", function(event) {
   // Verifica se o elemento clicado é o ícone de remover
   if (event.target.classList.contains("remove-icon")){
+    // Obtém a li pai do elemento clicado.
+    const item = event.target.closest(".expense")
     
+    // Remove o item da lista
+    item.remove()
   }
+
+  // Atualiza os totais
+  updateTotals()
 })
